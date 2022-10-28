@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Credit Card Scanner with ML Kit</string>
+    <string name="app_name">Credit Card Scanner</string>
 
     <!-- Strings for camera settings. -->
     <string name="pref_category_key_camera" translatable="false">pckc</string>
@@ -29,4 +29,10 @@
     <string name="pref_key_show_language_tag" translatable="false">slt</string>
     <string name="pref_title_show_text_confidence" translatable="false">Show confidence score</string>
     <string name="pref_key_show_text_confidence" translatable="false">stc</string>
+
+    <string name="shortcut_disabled_message">Shortcut Disabled</string>
+    <!-- Long label should be <= 25 characters-->
+    <string name="shortcut_long_label">Quick Snap</string>
+    <!-- Short label should be <= 10 characters-->
+    <string name="shortcut_short_label">Quick Snap</string>
 </resources>

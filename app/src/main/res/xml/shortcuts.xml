@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/logo_small"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message"
+        android:shortcutId="random_constellation"
+        android:shortcutLongLabel="@string/shortcut_long_label"
+        android:shortcutShortLabel="@string/shortcut_short_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.manish.creditcardscanner.MainActivity"
+            android:targetPackage="com.manish.creditcardscanner"/>
+    </shortcut>
+</shortcuts>

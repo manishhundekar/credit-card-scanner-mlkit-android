@@ -19,10 +19,10 @@ package com.manish.creditcardscanner.mlkit.textdetector;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Picture;
 import android.graphics.RectF;
 import android.util.Log;
 
@@ -32,6 +32,7 @@ import com.google.mlkit.vision.text.Text.Element;
 import com.google.mlkit.vision.text.Text.Line;
 import com.google.mlkit.vision.text.Text.Symbol;
 import com.google.mlkit.vision.text.Text.TextBlock;
+import com.manish.creditcardscanner.MainActivity;
 import com.manish.creditcardscanner.mlkit.GraphicOverlay;
 
 import java.util.Arrays;
@@ -39,10 +40,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Graphic instance for rendering TextBlock position, size, and ID within an associated graphic
- * overlay view.
- */
 public class TextGraphic extends GraphicOverlay.Graphic {
 
   private static final String TAG = "TextGraphic";
@@ -86,7 +83,6 @@ public class TextGraphic extends GraphicOverlay.Graphic {
     labelPaint = new Paint();
     labelPaint.setColor(MARKER_COLOR);
     labelPaint.setStyle(Paint.Style.FILL);
-    // Redraw the overlay, as this graphic has been added.
     postInvalidate();
   }
 
@@ -153,24 +149,33 @@ public class TextGraphic extends GraphicOverlay.Graphic {
   }
 
   private void drawText(String text, RectF rect, float textHeight, Canvas canvas) {
-    // If the image is flipped, the left will be translated to right, and the right to left.
     float x0 = translateX(rect.left);
     float x1 = translateX(rect.right);
     rect.left = min(x0, x1) - 80;
     rect.right = max(x0, x1) + 80;
     rect.top = translateY(rect.top - 160);
     rect.bottom = translateY(rect.bottom + 110);
-    canvas.drawRect(rect, rectPaint); // Card Box
-    float textWidth = textPaint.measureText(text);
-    canvas.drawRect(
-        rect.left - STROKE_WIDTH,
-        rect.top - textHeight,
-        rect.left + textWidth + 2 * STROKE_WIDTH,
-        rect.top,
-        labelPaint);
-    // Renders the text at the bottom of the box.
-    canvas.drawText(text, rect.left, rect.top - STROKE_WIDTH, textPaint); // Text Box
-    canvas.drawPicture(new Picture());
+//    canvas.drawRect(rect, rectPaint); // Card Box
+//    float textWidth = textPaint.measureText(text);
+//    canvas.drawRect(
+//        rect.left - STROKE_WIDTH,
+//        rect.top - textHeight - 200,
+//        rect.left + textWidth + 220,
+//        rect.top,
+//        labelPaint);
+//    Renders the text at the bottom of the box.
+//    canvas.drawText(text, rect.left, rect.top - STROKE_WIDTH, textPaint); // Text Box
+
+//    Bitmap icon1 = BitmapFactory.decodeResource(
+//            this.getApplicationContext().getResources(),
+//            R.drawable.widgetbg);
+    Bitmap icon = MainActivity.loadBitmapFromView();
+    Log.i("TextGraphic", "Recent Activity Display Success");
+    canvas.drawBitmap(
+            icon,
+            null,
+            new RectF(rect.left, rect.top - 600, rect.right, rect.top - 25),
+            null);
   }
 
   private boolean isRegexPatternMatch(String input) {
