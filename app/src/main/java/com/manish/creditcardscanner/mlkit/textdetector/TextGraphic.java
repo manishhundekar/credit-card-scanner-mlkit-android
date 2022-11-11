@@ -26,6 +26,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.Text.Element;
@@ -45,7 +46,7 @@ public class TextGraphic extends GraphicOverlay.Graphic {
   private static final String TAG = "TextGraphic";
   private static final String TEXT_WITH_LANGUAGE_TAG_FORMAT = "%s:%s";
 
-  private static final int TEXT_COLOR = Color.BLACK;
+  private static final int TEXT_COLOR = Color.WHITE;
   private static final int MARKER_COLOR = Color.WHITE;
   private static final float TEXT_SIZE = 54.0f;
   private static final float STROKE_WIDTH = 4.0f;
@@ -166,15 +167,21 @@ public class TextGraphic extends GraphicOverlay.Graphic {
 //    Renders the text at the bottom of the box.
 //    canvas.drawText(text, rect.left, rect.top - STROKE_WIDTH, textPaint); // Text Box
 
-//    Bitmap icon1 = BitmapFactory.decodeResource(
-//            this.getApplicationContext().getResources(),
-//            R.drawable.widgetbg);
-    Bitmap icon = MainActivity.loadBitmapFromView();
+//    Bitmap piechart = BitmapFactory.decodeResource(
+//                      this.getApplicationContext().getResources(),
+//                      R.drawable.pie);
+    Bitmap piechart = MainActivity.loadPieChartBitmapFromView();
+    Bitmap activity = MainActivity.loadBitmapFromView();
     Log.i("TextGraphic", "Recent Activity Display Success");
     canvas.drawBitmap(
-            icon,
+            piechart,
             null,
-            new RectF(rect.left, rect.top - 600, rect.right, rect.top - 25),
+            new RectF(rect.left, rect.top - 520, rect.right, rect.top - 10),
+            null);
+    canvas.drawBitmap(
+            activity,
+            null,
+            new RectF(rect.left, rect.bottom, rect.right, rect.bottom + 520),
             null);
   }
 
@@ -182,10 +189,27 @@ public class TextGraphic extends GraphicOverlay.Graphic {
     Pattern p = Pattern.compile(
             "^\\d\\d\\d\\d\\s\\d\\d\\d\\d\\s\\d\\d\\d\\d\\s\\d\\d\\d\\d$",
             Pattern.CASE_INSENSITIVE);
-    Matcher m = p.matcher(input);
+    Matcher m = p.matcher(refactorCardNo(input));
     if (m.matches()) {
+      Log.i("CREDITCARDREGEX", "matched");
       return true;
     }
     return false;
+  }
+
+  @NonNull
+  private String refactorCardNo(String input) {
+    String temp = input;
+    temp = temp.replace("b", "6");
+    temp = temp.replace("B", "6");
+    temp = temp.replace("s", "5");
+    temp = temp.replace("S", "5");
+    temp = temp.replace("i", "1");
+    temp = temp.replace("I", "1");
+    temp = temp.replace("T", "7");
+    temp = temp.replace("t", "7");
+//    temp = temp.replace(" ", "");
+//    Log.i("CREDITCARDINPUT", temp);
+    return temp;
   }
 }

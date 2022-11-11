@@ -19,7 +19,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresPermission;
 
 import com.google.android.gms.common.images.Size;
-import com.google.common.base.Preconditions;
 import com.manish.creditcardscanner.R;
 import com.manish.creditcardscanner.mlkit.textdetector.VisionImageProcessor;
 
@@ -296,7 +295,7 @@ public class CameraSource {
 
     @Nullable
     public static SizePair getCameraPreviewSizePair(Context context, int cameraId) {
-      Preconditions.checkArgument(cameraId == CameraSource.CAMERA_FACING_BACK);
+//      Preconditions.checkArgument(cameraId == CameraSource.CAMERA_FACING_BACK);
       String previewSizePrefKey = context.getString(R.string.pref_key_rear_camera_preview_size);
       String pictureSizePrefKey = context.getString(R.string.pref_key_rear_camera_picture_size);
 

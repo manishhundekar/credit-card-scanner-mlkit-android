@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.manish.creditcardscanner">
 
-    <uses-sdk tools:overrideLibrary="androidx.camera.camera2,
-    androidx.camera.core,
-    androidx.camera.view,
-    androidx.camera.lifecycle" />
+    <uses-sdk tools:overrideLibrary="
+                androidx.camera.camera2,
+                androidx.camera.core,
+                androidx.camera.view,
+                androidx.camera.lifecycle" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -24,10 +25,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
+                android:resource="@xml/shortcuts" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,5 +36,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

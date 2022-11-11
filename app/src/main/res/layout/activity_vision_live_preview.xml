@@ -29,4 +29,11 @@
         android:id="@+id/textdisplay"
         layout="@layout/display" />
 
+    <include
+        android:layout_width="380dp"
+        android:layout_height="280dp"
+        android:visibility="invisible"
+        android:id="@+id/piechart"
+        layout="@layout/activity_pie_chart" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

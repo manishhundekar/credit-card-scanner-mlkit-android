@@ -8,25 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ListAdapter extends ArrayAdapter<String> {
     private Context context;
-    private String[] dataset1;
-    private String[] dataset2;
-    private String[] dataset3;
-    private String[] dataset4;
+    ArrayList<Transaction> activityArray;
 
     public ListAdapter(Context context,
                        int layout,
-                       String[] ListArray1,
-                       String[] ListArray2,
-                       String[] ListArray3,
-                       String[] ListArray4) {
-        super(context, layout, ListArray1);
+                       ArrayList<Transaction> activityArray) {
+        super(context, layout, new String[activityArray.size()]);
         this.context = context;
-        this.dataset1 = ListArray1;
-        this.dataset2 = ListArray2;
-        this.dataset3 = ListArray3;
-        this.dataset4 = ListArray4;
+        this.activityArray = activityArray;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -38,11 +31,11 @@ public class ListAdapter extends ArrayAdapter<String> {
         TextView tv3 = (TextView) rowView.findViewById(R.id.amountTxtVw);
         TextView tv4 = (TextView) rowView.findViewById(R.id.txnTypeTxtVw);
 
-        //TODO : Dyanamic Changes
-        tv1.setText("Transfer");
-        tv2.setText("March 27, 2020");
-        tv3.setText("GBP 123.00");
-        tv4.setText("Dr");
+        Transaction transaction = this.activityArray.get(position);
+        tv1.setText(transaction.getTxnDescriptionTxtVw());
+        tv2.setText(transaction.getDateTxtVw());
+        tv3.setText(transaction.getAmountTxtVw());
+        tv4.setText(transaction.getTxnTypeTxtVw());
 
         return rowView;
     }
