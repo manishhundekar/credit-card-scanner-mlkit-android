@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import com.manish.creditcardscanner.charting.data.PieData;
 import com.manish.creditcardscanner.charting.highlight.Highlight;
 import com.manish.creditcardscanner.charting.highlight.PieHighlighter;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
 import com.manish.creditcardscanner.charting.renderer.PieChartRenderer;
 import com.manish.creditcardscanner.charting.utils.MPPointF;
 import com.manish.creditcardscanner.charting.utils.Utils;
@@ -755,17 +754,14 @@ public class PieChart extends PieRadarChartBase<PieData> {
         super.onDetachedFromWindow();
     }
 
-    @Override
     public float getYChartMin() {
         return 0;
     }
 
-    @Override
     public float getYChartMax() {
         return 0;
     }
 
-    @Override
     public int getMaxVisibleCount() {
         return 0;
     }

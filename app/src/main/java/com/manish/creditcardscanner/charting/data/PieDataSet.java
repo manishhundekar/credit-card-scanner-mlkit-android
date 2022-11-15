@@ -3,7 +3,7 @@ package com.manish.creditcardscanner.charting.data;
 
 import androidx.annotation.Nullable;
 
-import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
+import com.manish.creditcardscanner.charting.IPieDataSet;
 import com.manish.creditcardscanner.charting.utils.Utils;
 
 import java.util.ArrayList;

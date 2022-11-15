@@ -11,8 +11,7 @@ import com.manish.creditcardscanner.charting.ChartAnimator;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.highlight.Highlight;
-import com.manish.creditcardscanner.charting.interfaces.dataprovider.ChartInterface;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
+import com.manish.creditcardscanner.charting.IDataSet;
 import com.manish.creditcardscanner.charting.utils.Utils;
 import com.manish.creditcardscanner.charting.utils.ViewPortHandler;
 
@@ -66,10 +65,10 @@ public abstract class DataRenderer extends Renderer {
         mHighlightPaint.setColor(Color.rgb(255, 187, 115));
     }
 
-    protected boolean isDrawingValuesAllowed(ChartInterface chart) {
-        return chart.getData().getEntryCount() < chart.getMaxVisibleCount()
-                * mViewPortHandler.getScaleX();
-    }
+//    protected boolean isDrawingValuesAllowed(ChartInterface chart) {
+//        return chart.getData().getEntryCount() < chart.getMaxVisibleCount()
+//                * mViewPortHandler.getScaleX();
+//    }
 
     /**
      * Returns the Paint object this renderer uses for drawing the values

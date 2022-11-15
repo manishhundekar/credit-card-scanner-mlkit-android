@@ -8,7 +8,7 @@ import android.graphics.Typeface;
 import com.manish.creditcardscanner.charting.Legend;
 import com.manish.creditcardscanner.charting.YAxis;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
+import com.manish.creditcardscanner.charting.IDataSet;
 import com.manish.creditcardscanner.charting.utils.ColorTemplate;
 import com.manish.creditcardscanner.charting.utils.MPPointF;
 import com.manish.creditcardscanner.charting.utils.Utils;

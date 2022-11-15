@@ -23,7 +23,7 @@ import com.manish.creditcardscanner.charting.data.PieDataSet;
 import com.manish.creditcardscanner.charting.data.PieEntry;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.highlight.Highlight;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
+import com.manish.creditcardscanner.charting.IPieDataSet;
 import com.manish.creditcardscanner.charting.utils.ColorTemplate;
 import com.manish.creditcardscanner.charting.utils.MPPointF;
 import com.manish.creditcardscanner.charting.utils.Utils;

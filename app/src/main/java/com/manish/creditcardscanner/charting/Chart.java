@@ -32,8 +32,6 @@ import com.manish.creditcardscanner.charting.formatter.DefaultValueFormatter;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.highlight.Highlight;
 import com.manish.creditcardscanner.charting.highlight.IHighlighter;
-import com.manish.creditcardscanner.charting.interfaces.dataprovider.ChartInterface;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
 import com.manish.creditcardscanner.charting.renderer.DataRenderer;
 import com.manish.creditcardscanner.charting.renderer.LegendRenderer;
 import com.manish.creditcardscanner.charting.utils.MPPointF;
@@ -52,8 +50,7 @@ import java.util.ArrayList;
  * @author Philipp Jahoda
  */
 public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Entry>>> extends
-        ViewGroup
-        implements ChartInterface {
+        ViewGroup{
 
     public static final String LOG_TAG = "MPAndroidChart";
 
@@ -464,7 +461,6 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      */
     protected float mMaxHighlightDistance = 0f;
 
-    @Override
     public float getMaxHighlightDistance() {
         return mMaxHighlightDistance;
     }
@@ -1062,17 +1058,14 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         return mData.getYMin();
     }
 
-    @Override
     public float getXChartMax() {
         return mXAxis.mAxisMaximum;
     }
 
-    @Override
     public float getXChartMin() {
         return mXAxis.mAxisMinimum;
     }
 
-    @Override
     public float getXRange() {
         return mXAxis.mAxisRange;
     }
@@ -1094,7 +1087,6 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
-    @Override
     public MPPointF getCenterOffsets() {
         return mViewPortHandler.getContentCenter();
     }
@@ -1311,7 +1303,6 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
-    @Override
     public RectF getContentRect() {
         return mViewPortHandler.getContentRect();
     }
@@ -1491,7 +1482,6 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      *
      * @return
      */
-    @Override
     public MPPointF getCenterOfView() {
         return getCenter();
     }

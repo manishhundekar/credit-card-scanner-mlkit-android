@@ -4,7 +4,7 @@ package com.manish.creditcardscanner.charting.data;
 import android.util.Log;
 
 import com.manish.creditcardscanner.charting.highlight.Highlight;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
+import com.manish.creditcardscanner.charting.IPieDataSet;
 
 import java.util.List;
 

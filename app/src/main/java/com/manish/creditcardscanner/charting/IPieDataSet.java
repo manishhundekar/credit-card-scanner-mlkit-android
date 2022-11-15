@@ -1,4 +1,4 @@
-package com.manish.creditcardscanner.charting.interfaces.datasets;
+package com.manish.creditcardscanner.charting;
 
 import androidx.annotation.Nullable;
 

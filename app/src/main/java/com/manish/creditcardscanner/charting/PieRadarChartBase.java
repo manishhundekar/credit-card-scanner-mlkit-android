@@ -13,7 +13,6 @@ import android.util.Log;
 import com.manish.creditcardscanner.charting.Easing.EasingFunction;
 import com.manish.creditcardscanner.charting.data.ChartData;
 import com.manish.creditcardscanner.charting.data.Entry;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
 import com.manish.creditcardscanner.charting.utils.MPPointF;
 import com.manish.creditcardscanner.charting.utils.Utils;
 

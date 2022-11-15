@@ -1,4 +1,4 @@
-package com.manish.creditcardscanner.charting.interfaces.datasets;
+package com.manish.creditcardscanner.charting;
 
 import android.graphics.DashPathEffect;
 import android.graphics.Typeface;
