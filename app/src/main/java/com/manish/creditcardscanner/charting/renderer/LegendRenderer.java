@@ -8,11 +8,9 @@ import android.graphics.Paint.Align;
 import android.graphics.Path;
 import android.graphics.Typeface;
 
-import com.manish.creditcardscanner.charting.components.Legend;
-import com.manish.creditcardscanner.charting.components.LegendEntry;
+import com.manish.creditcardscanner.charting.Legend;
+import com.manish.creditcardscanner.charting.LegendEntry;
 import com.manish.creditcardscanner.charting.data.ChartData;
-import com.manish.creditcardscanner.charting.interfaces.datasets.IBarDataSet;
-import com.manish.creditcardscanner.charting.interfaces.datasets.ICandleDataSet;
 import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
 import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
 import com.manish.creditcardscanner.charting.utils.ColorTemplate;
@@ -96,45 +94,47 @@ public class LegendRenderer extends Renderer {
                 int entryCount = dataSet.getEntryCount();
 
                 // if we have a barchart with stacked bars
-                if (dataSet instanceof IBarDataSet && ((IBarDataSet) dataSet).isStacked()) {
+//                if (dataSet instanceof IBarDataSet && ((IBarDataSet) dataSet).isStacked()) {
+//
+//                    IBarDataSet bds = (IBarDataSet) dataSet;
+//                    String[] sLabels = bds.getStackLabels();
+//
+//                    int minEntries = Math.min(clrs.size(), bds.getStackSize());
+//
+//                    for (int j = 0; j < minEntries; j++) {
+//                        String label;
+//                        if (sLabels.length > 0) {
+//                            int labelIndex = j % minEntries;
+//                            label = labelIndex < sLabels.length ? sLabels[labelIndex] : null;
+//                        } else {
+//                            label = null;
+//                        }
+//
+//                        computedEntries.add(new LegendEntry(
+//                                label,
+//                                dataSet.getForm(),
+//                                dataSet.getFormSize(),
+//                                dataSet.getFormLineWidth(),
+//                                dataSet.getFormLineDashEffect(),
+//                                clrs.get(j)
+//                        ));
+//                    }
+//
+//                    if (bds.getLabel() != null) {
+//                        // add the legend description label
+//                        computedEntries.add(new LegendEntry(
+//                                dataSet.getLabel(),
+//                                Legend.LegendForm.NONE,
+//                                Float.NaN,
+//                                Float.NaN,
+//                                null,
+//                                ColorTemplate.COLOR_NONE
+//                        ));
+//                    }
+//
+//                } else
 
-                    IBarDataSet bds = (IBarDataSet) dataSet;
-                    String[] sLabels = bds.getStackLabels();
-
-                    int minEntries = Math.min(clrs.size(), bds.getStackSize());
-
-                    for (int j = 0; j < minEntries; j++) {
-                        String label;
-                        if (sLabels.length > 0) {
-                            int labelIndex = j % minEntries;
-                            label = labelIndex < sLabels.length ? sLabels[labelIndex] : null;
-                        } else {
-                            label = null;
-                        }
-
-                        computedEntries.add(new LegendEntry(
-                                label,
-                                dataSet.getForm(),
-                                dataSet.getFormSize(),
-                                dataSet.getFormLineWidth(),
-                                dataSet.getFormLineDashEffect(),
-                                clrs.get(j)
-                        ));
-                    }
-
-                    if (bds.getLabel() != null) {
-                        // add the legend description label
-                        computedEntries.add(new LegendEntry(
-                                dataSet.getLabel(),
-                                Legend.LegendForm.NONE,
-                                Float.NaN,
-                                Float.NaN,
-                                null,
-                                ColorTemplate.COLOR_NONE
-                        ));
-                    }
-
-                } else if (dataSet instanceof IPieDataSet) {
+                    if (dataSet instanceof IPieDataSet) {
 
                     IPieDataSet pds = (IPieDataSet) dataSet;
 
@@ -161,30 +161,6 @@ public class LegendRenderer extends Renderer {
                                 ColorTemplate.COLOR_NONE
                         ));
                     }
-
-                } else if (dataSet instanceof ICandleDataSet && ((ICandleDataSet) dataSet).getDecreasingColor() !=
-                        ColorTemplate.COLOR_NONE) {
-
-                    int decreasingColor = ((ICandleDataSet) dataSet).getDecreasingColor();
-                    int increasingColor = ((ICandleDataSet) dataSet).getIncreasingColor();
-
-                    computedEntries.add(new LegendEntry(
-                            null,
-                            dataSet.getForm(),
-                            dataSet.getFormSize(),
-                            dataSet.getFormLineWidth(),
-                            dataSet.getFormLineDashEffect(),
-                            decreasingColor
-                    ));
-
-                    computedEntries.add(new LegendEntry(
-                            dataSet.getLabel(),
-                            dataSet.getForm(),
-                            dataSet.getFormSize(),
-                            dataSet.getFormLineWidth(),
-                            dataSet.getFormLineDashEffect(),
-                            increasingColor
-                    ));
 
                 } else { // all others
 

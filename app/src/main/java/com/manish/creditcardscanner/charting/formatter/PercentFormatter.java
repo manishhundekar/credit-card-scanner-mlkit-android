@@ -1,7 +1,7 @@
 
 package com.manish.creditcardscanner.charting.formatter;
 
-import com.manish.creditcardscanner.charting.components.AxisBase;
+import com.manish.creditcardscanner.charting.AxisBase;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.utils.ViewPortHandler;
 

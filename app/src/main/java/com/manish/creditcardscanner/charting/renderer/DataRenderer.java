@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
 
-import com.manish.creditcardscanner.charting.animation.ChartAnimator;
+import com.manish.creditcardscanner.charting.ChartAnimator;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.highlight.Highlight;

@@ -5,8 +5,8 @@ import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Typeface;
 
-import com.manish.creditcardscanner.charting.components.Legend;
-import com.manish.creditcardscanner.charting.components.YAxis;
+import com.manish.creditcardscanner.charting.Legend;
+import com.manish.creditcardscanner.charting.YAxis;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;
 import com.manish.creditcardscanner.charting.utils.ColorTemplate;

@@ -1,7 +1,7 @@
 
 package com.manish.creditcardscanner.charting.highlight;
 
-import com.manish.creditcardscanner.charting.components.YAxis;
+import com.manish.creditcardscanner.charting.YAxis;
 
 /**
  * Contains information needed to determine the highlighted value.

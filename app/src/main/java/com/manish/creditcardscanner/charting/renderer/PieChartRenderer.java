@@ -15,8 +15,8 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 
-import com.manish.creditcardscanner.charting.animation.ChartAnimator;
-import com.manish.creditcardscanner.charting.charts.PieChart;
+import com.manish.creditcardscanner.charting.ChartAnimator;
+import com.manish.creditcardscanner.charting.PieChart;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.data.PieData;
 import com.manish.creditcardscanner.charting.data.PieDataSet;

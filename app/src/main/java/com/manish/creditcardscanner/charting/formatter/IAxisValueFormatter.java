@@ -1,6 +1,6 @@
 package com.manish.creditcardscanner.charting.formatter;
 
-import com.manish.creditcardscanner.charting.components.AxisBase;
+import com.manish.creditcardscanner.charting.AxisBase;
 
 /**
  * Created by Philipp Jahoda on 20/09/15.

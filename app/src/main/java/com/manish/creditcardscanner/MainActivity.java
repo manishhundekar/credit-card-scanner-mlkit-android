@@ -1,6 +1,7 @@
 package com.manish.creditcardscanner;
 
-import static com.manish.creditcardscanner.charting.animation.Easing.EaseInOutCubic;
+
+import static com.manish.creditcardscanner.charting.Easing.EaseInOutCubic;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -17,8 +18,8 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
-import com.manish.creditcardscanner.charting.charts.PieChart;
-import com.manish.creditcardscanner.charting.components.Legend;
+import com.manish.creditcardscanner.charting.PieChart;
+import com.manish.creditcardscanner.charting.Legend;
 import com.manish.creditcardscanner.charting.data.PieData;
 import com.manish.creditcardscanner.charting.data.PieDataSet;
 import com.manish.creditcardscanner.charting.data.PieEntry;
@@ -221,7 +222,7 @@ public final class MainActivity extends AppCompatActivity{
         chart.setData(data);
 
         // undo all highlights
-        chart.highlightValues(null);
+//        chart.highlightValues(null);
         chart.invalidate();
     }
 

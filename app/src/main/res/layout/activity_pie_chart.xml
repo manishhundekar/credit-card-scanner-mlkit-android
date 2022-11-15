@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.manish.creditcardscanner.charting.charts.PieChart
+    <com.manish.creditcardscanner.charting.PieChart
         android:id="@+id/chart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
 
 </RelativeLayout>

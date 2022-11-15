@@ -4,7 +4,7 @@ package com.manish.creditcardscanner.charting.data;
 import android.graphics.Typeface;
 import android.util.Log;
 
-import com.manish.creditcardscanner.charting.components.YAxis.AxisDependency;
+import com.manish.creditcardscanner.charting.YAxis.AxisDependency;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
 import com.manish.creditcardscanner.charting.highlight.Highlight;
 import com.manish.creditcardscanner.charting.interfaces.datasets.IDataSet;

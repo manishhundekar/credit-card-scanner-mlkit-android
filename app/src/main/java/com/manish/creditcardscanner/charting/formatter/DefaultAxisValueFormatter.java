@@ -1,6 +1,6 @@
 package com.manish.creditcardscanner.charting.formatter;
 
-import com.manish.creditcardscanner.charting.components.AxisBase;
+import com.manish.creditcardscanner.charting.AxisBase;
 
 import java.text.DecimalFormat;
 

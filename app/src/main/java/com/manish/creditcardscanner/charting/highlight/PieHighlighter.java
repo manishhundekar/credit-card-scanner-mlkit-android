@@ -1,6 +1,6 @@
 package com.manish.creditcardscanner.charting.highlight;
 
-import com.manish.creditcardscanner.charting.charts.PieChart;
+import com.manish.creditcardscanner.charting.PieChart;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.interfaces.datasets.IPieDataSet;
 

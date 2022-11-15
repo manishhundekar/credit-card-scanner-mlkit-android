@@ -1,7 +1,7 @@
 package com.manish.creditcardscanner.charting.highlight;
 
-import com.manish.creditcardscanner.charting.charts.PieChart;
-import com.manish.creditcardscanner.charting.charts.PieRadarChartBase;
+import com.manish.creditcardscanner.charting.PieChart;
+import com.manish.creditcardscanner.charting.PieRadarChartBase;
 
 import java.util.ArrayList;
 import java.util.List;

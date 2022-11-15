@@ -1,11 +1,10 @@
 package com.manish.creditcardscanner.charting.interfaces.datasets;
 
 import android.graphics.DashPathEffect;
-import android.graphics.PointF;
 import android.graphics.Typeface;
 
-import com.manish.creditcardscanner.charting.components.Legend;
-import com.manish.creditcardscanner.charting.components.YAxis;
+import com.manish.creditcardscanner.charting.Legend;
+import com.manish.creditcardscanner.charting.YAxis;
 import com.manish.creditcardscanner.charting.data.DataSet;
 import com.manish.creditcardscanner.charting.data.Entry;
 import com.manish.creditcardscanner.charting.formatter.IValueFormatter;
