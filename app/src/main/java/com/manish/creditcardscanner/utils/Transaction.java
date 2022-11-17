@@ -1,4 +1,4 @@
-package com.manish.creditcardscanner;
+package com.manish.creditcardscanner.utils;
 
 public class Transaction {
     private String txnDescriptionTxtVw;

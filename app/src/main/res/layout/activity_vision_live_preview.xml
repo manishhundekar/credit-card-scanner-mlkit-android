@@ -26,14 +26,18 @@
         android:layout_width="380dp"
         android:layout_height="280dp"
         android:visibility="invisible"
-        android:id="@+id/textdisplay"
+        android:id="@+id/transaction_display"
         layout="@layout/display" />
 
-    <include
+
+    <LinearLayout
         android:layout_width="380dp"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:visibility="invisible"
         android:id="@+id/piechart"
-        layout="@layout/activity_pie_chart" />
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

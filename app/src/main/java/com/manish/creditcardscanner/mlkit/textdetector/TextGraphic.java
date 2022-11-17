@@ -16,9 +16,11 @@
 
 package com.manish.creditcardscanner.mlkit.textdetector;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -29,9 +31,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.google.mlkit.vision.text.Text;
-import com.google.mlkit.vision.text.Text.Element;
 import com.google.mlkit.vision.text.Text.Line;
-import com.google.mlkit.vision.text.Text.Symbol;
 import com.google.mlkit.vision.text.Text.TextBlock;
 import com.manish.creditcardscanner.MainActivity;
 import com.manish.creditcardscanner.mlkit.GraphicOverlay;
@@ -104,7 +104,7 @@ public class TextGraphic extends GraphicOverlay.Graphic {
                     textBlock.getRecognizedLanguage(),
                     textBlock.getText())
                 : textBlock.getText();
-        drawText(
+        drawAR(
             text,
             new RectF(textBlock.getBoundingBox()),
             TEXT_SIZE * textBlock.getLines().size() + 2 * STROKE_WIDTH,
@@ -127,16 +127,22 @@ public class TextGraphic extends GraphicOverlay.Graphic {
                   : text;
 
           if(isRegexPatternMatch(text)){
-              drawText(text, new RectF(line.getBoundingBox()), TEXT_SIZE + 2 * STROKE_WIDTH, canvas);
+              drawAR(text, new RectF(line.getBoundingBox()), TEXT_SIZE + 2 * STROKE_WIDTH, canvas);
+
+              Log.i("CARDNO", text);
+              if(false) {
+                navigateToSnapshotNotFoundAxtivity();
+              }
           }
-          for (Element element : line.getElements()) {
+
+          for (Text.Element element : line.getElements()) {
             Log.d(TAG, "Element text is: " + element.getText());
             Log.d(TAG, "Element boundingbox is: " + element.getBoundingBox());
             Log.d(TAG, "Element cornerpoint is: " + Arrays.toString(element.getCornerPoints()));
             Log.d(TAG, "Element language is: " + element.getRecognizedLanguage());
             Log.d(TAG, "Element confidence is: " + element.getConfidence());
             Log.d(TAG, "Element angle is: " + element.getAngle());
-            for (Symbol symbol : element.getSymbols()) {
+            for (Text.Symbol symbol : element.getSymbols()) {
               Log.d(TAG, "Symbol text is: " + symbol.getText());
               Log.d(TAG, "Symbol boundingbox is: " + symbol.getBoundingBox());
               Log.d(TAG, "Symbol cornerpoint is: " + Arrays.toString(symbol.getCornerPoints()));
@@ -149,7 +155,19 @@ public class TextGraphic extends GraphicOverlay.Graphic {
     }
   }
 
-  private void drawText(String text, RectF rect, float textHeight, Canvas canvas) {
+  private void navigateToSnapshotNotFoundAxtivity() {
+    Class cls = null;
+    try {
+      cls = Class.forName("com.manish.creditcardscanner.SnapshotNotFoundActivity");
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+    Intent intent = new Intent(this.getApplicationContext(), cls);
+    intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+    this.getApplicationContext().startActivity(intent);
+  }
+
+  private void drawAR(String text, RectF rect, float textHeight, Canvas canvas) {
     float x0 = translateX(rect.left);
     float x1 = translateX(rect.right);
     rect.left = min(x0, x1) - 80;
@@ -189,9 +207,10 @@ public class TextGraphic extends GraphicOverlay.Graphic {
     Pattern p = Pattern.compile(
             "^\\d\\d\\d\\d\\s\\d\\d\\d\\d\\s\\d\\d\\d\\d\\s\\d\\d\\d\\d$",
             Pattern.CASE_INSENSITIVE);
-    Matcher m = p.matcher(refactorCardNo(input));
+    input = refactorCardNo(input);
+    Matcher m = p.matcher(input);
     if (m.matches()) {
-      Log.i("CREDITCARDREGEX", "matched");
+      Log.i("CREDITCARDREGEX", "regex match found");
       return true;
     }
     return false;

@@ -9,11 +9,15 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/your_image.xml" value="0.151" />
         <entry key="app/src/main/res/layout-v31/listview.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_basic_pie.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19157608695652173" />
         <entry key="app/src/main/res/layout/activity_pie_chart.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_snapshot_not_found.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_vision_live_preview.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/demo_pie.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/display.xml" value="0.1" />
         <entry key="app/src/main/res/layout/listview.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/pie.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/bar.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/menu/pie.xml" value="0.1796875" />
         <entry key="app/src/main/res/xml/shortcuts.xml" value="0.19610507246376813" />
